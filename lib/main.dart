@@ -53,11 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           actions: <Widget>[
             IconButton(
-              icon: Icon(Icons.search, color: Colors.white70),
-              onPressed: (){},
-            ),
-            IconButton(
-              icon: Icon(Icons.favorite, color: Colors.white70),
+              icon: Icon(Icons.menu, color: Colors.white70),
               onPressed: (){},
             ),
           ],
@@ -67,9 +63,6 @@ class _MyHomePageState extends State<MyHomePage> {
           height: size.height,
           child: Column(
             children: <Widget>[
-              /*SizedBox(
-                height: 3,
-              ),*/
               Expanded(
                 child: FutureBuilder(
                   future: httpService.getCoins(),
@@ -87,13 +80,14 @@ class _MyHomePageState extends State<MyHomePage> {
                                 //BoxShadow(color: Colors.black.withAlpha(50), blurRadius: 10.0),
                               ]),
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 5),
+                                padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     Image.network(
                                       coins[index].url.toString(),
                                       height: 50,
+                                      width: 50,
                                     ),
                                     SizedBox(
                                       width: 20,
