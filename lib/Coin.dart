@@ -29,15 +29,21 @@ class Coin{
 }
 
 class CoinInfo{
-  final String algorithm;
+  String algorithm;
   final String description;
+  String date;
 
-  CoinInfo({@required this.algorithm, @required this.description});
+  CoinInfo({@required this.algorithm, @required this.description, @required this.date});
 
   factory CoinInfo.fromJson(Map<String, dynamic> json){
-    return CoinInfo(
+    CoinInfo tmp = CoinInfo(
       algorithm: json['hashing_algorithm'],
       description: json['description']['en'],
+      date: json['genesis_date'],
     );
+    tmp.algorithm = tmp.algorithm == null ?  "Unknown" :  tmp.algorithm;
+    tmp.date = tmp.date == null ?  "Unknown" :  tmp.date;
+
+    return tmp;
   }
 }

@@ -29,7 +29,7 @@ class CoinInfoService{
   final String coinID;
   Uri url;
   CoinInfoService({@required this.coinID}){
-    url = Uri.parse('https://api.coingecko.com/api/v3/coins/$coinID?localization=false');
+    url = Uri.parse('https://api.coingecko.com/api/v3/coins/$coinID?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false');
   }
 
   Future<CoinInfo> getInfo() async {
