@@ -2,6 +2,7 @@ import 'dart:convert';
 
 // Stores the relevant data of a Cryptocurrency
 class Coin{
+  final String id;
   // Short name of the crypto
   final String symbol;
   // Long name of the crypto
@@ -11,15 +12,30 @@ class Coin{
   // Url that contains the image of the crypto
   final Uri url;
 
-  Coin({this.symbol, this.name, this.price, this.url});
+  Coin({this.id, this.symbol, this.name, this.price, this.url});
 
   // Creates a Coin object from a JSON file
   factory Coin.fromJson(Map<String, dynamic> json) {
     return Coin(
+      id: json['id'],
       symbol: json['symbol'],
       name: json['name'],
       price: json['current_price'],
       url: Uri.parse(json['image']),
+    );
+  }
+}
+
+class CoinInfo{
+  String algorithm;
+  String description;
+
+  CoinInfo({this.algorithm, this.description});
+
+  factory CoinInfo.fromJson(Map<String, dynamic> json){
+    return CoinInfo(
+      algorithm: json['hashing_algorithm'],
+      description: json['description']['en'],
     );
   }
 }
