@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
+
 // Stores the relevant data of a Cryptocurrency
 class Coin{
   final String id;
@@ -27,10 +29,10 @@ class Coin{
 }
 
 class CoinInfo{
-  String algorithm;
-  String description;
+  final String algorithm;
+  final String description;
 
-  CoinInfo({this.algorithm, this.description});
+  CoinInfo({@required this.algorithm, @required this.description});
 
   factory CoinInfo.fromJson(Map<String, dynamic> json){
     return CoinInfo(

@@ -51,11 +51,9 @@ class _CoinListState extends State<CoinList> {
                             );
                           },
                           child: Container(
-                            height: 80,
+                            height: 82,
                             margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
-                            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10.0)), color: const Color(0xFF111111), boxShadow: [
-                              //BoxShadow(color: Colors.black.withAlpha(50), blurRadius: 10.0),
-                            ]),
+                            decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(10.0)), color: const Color(0xFF111111),),
                             child: Padding(
                               padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 9),
                               child: Row(
