@@ -29,6 +29,12 @@ class _CoinListState extends State<CoinList> {
         ],
       ),
       body: buildCoinList(favourites),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){ setState(() {
+
+        });},
+        child: Icon(Icons.refresh),
+      ),
     );
   }
 
@@ -105,7 +111,17 @@ class _CoinListState extends State<CoinList> {
                 );
             },
           );
-          final divided = savedCoinTiles.isNotEmpty ? ListTile.divideTiles(context: context, tiles: savedCoinTiles).toList() : <Widget>[];
+          final divided = savedCoinTiles.isNotEmpty ? ListTile.divideTiles(context: context, tiles: savedCoinTiles).toList() : <Widget>[
+            Center(
+              child: Container(
+                padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+                child: Text(
+                  "It's empty here :(",
+                  style: TextStyle(fontSize: 15, color: Colors.white54),
+                ),
+              ),
+            ),
+          ];
           return Scaffold(
             backgroundColor: const Color(0xff222222),
             appBar: AppBar(
@@ -120,6 +136,7 @@ class _CoinListState extends State<CoinList> {
 
   Widget buildCoinList(FavouritesProvider fav) {
     final Size size = MediaQuery.of(context).size;
+    debugPrint("BUILDING");
     return Container(
       height: size.height,
       child: Column(
