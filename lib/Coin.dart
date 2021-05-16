@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/cupertino.dart';
 
 // Stores the relevant data of a Cryptocurrency

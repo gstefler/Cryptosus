@@ -3,8 +3,6 @@ import 'package:flutter/material.dart';
 import 'HttpService.dart';
 import 'Coin.dart';
 import 'package:flutter_html/flutter_html.dart';
-import 'package:html/dom_parsing.dart';
-import 'package:html/dom.dart' as dom;
 
 class CoinInfoPage extends StatelessWidget {
   final Coin coin;
@@ -26,7 +24,6 @@ class CoinInfoPage extends StatelessWidget {
   }
 
   Widget infoDataWidget(CoinInfo info) {
-
     return Center(
       child: Container(
         width: 800.0,
@@ -112,7 +109,7 @@ class CoinInfoPage extends StatelessWidget {
                 alignment: Alignment.centerLeft,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.max,
+                  mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     Text(
